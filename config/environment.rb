@@ -1,9 +1,14 @@
 require "bundler/setup"
 Bundler.require
-require "sinatra/activerecord"
-require "ostruct"
-require "date"
+
 require_all 'app'
 
-ENV["SINATRA_ENV"] ||= 'development'
-ActiveRecord::Base.establish_connection(ENV["SINATRA_ENV"].to_sym)
+
+
+ActiveRecord::Base.establish_connection(
+    adapter: "sqlite3",
+    database: "db/user.db"
+)
+
+ActiveRecord::Base.logger = Logger.new(STDOUT)
+
