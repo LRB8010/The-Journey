@@ -12,24 +12,25 @@
 
 ActiveRecord::Schema.define(version: 5) do
 
-  create_table "choicea", force: :cascade do |t|
-    t.integer "event_id"
+  create_table "choiceas", force: :cascade do |t|
+    t.string "description"
     t.integer "outcome_id"
   end
 
-  create_table "choiceb", force: :cascade do |t|
-    t.integer "event_id"
+  create_table "choicebs", force: :cascade do |t|
+    t.string "description"
     t.integer "outcome_id"
   end
 
   create_table "events", force: :cascade do |t|
     t.string "dialogue"
-    t.string "choice_a"
-    t.string "choice_b"
+    t.integer "choicea_id"
+    t.integer "choiceb_id"
   end
 
   create_table "outcomes", force: :cascade do |t|
     t.string "outcome"
+    t.integer "event_id"
   end
 
   create_table "users", force: :cascade do |t|
