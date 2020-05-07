@@ -20,7 +20,7 @@ Choicea.create(description: "Inspect statues", outcome_id: 13)
 Choicea.create(description: "Hide under debris", outcome_id: 15)
 Choicea.create(description: "Try to attack tail", outcome_id: 17)
 Choicea.create(description: "Sneak in and attack", outcome_id: 20)
-Choicea.create(description: "Forest", outcome_id:1)
+Choicea.create(description: "The Dark Forest", outcome_id:1)
 
 
 
