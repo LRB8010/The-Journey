@@ -149,3 +149,7 @@ else
     end
 end
 
+if prompt.select("Delete your story and try again?", "No", "Yes") == "Yes"
+    User.find_by(name: user_name).destroy
+    ruby 'yea.rb'
+end
