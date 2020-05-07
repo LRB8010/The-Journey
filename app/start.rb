@@ -5,6 +5,19 @@ require 'pry'
 ActiveRecord::Base.logger = nil
 beginning_message = "You have been travelling from your hometown on your first adventure. Young, eager and some would presume foolhardy. You have trained for this and are sure to be destined for greatness. Before you the path you follow is a long one. Ahead you see a coming fork. In the fork stands a sign noting the two choices you have. One is shown to be a path leading through the Dark Forest while the other directs you to the nearest town, a prospering city, Milgard"
 
+game_over = "  ▄████     ▄▄▄          ███▄ ▄███▓   ▓█████     ▒█████      ██▒   █▓   ▓█████     ██▀███  
+ ██▒ ▀█▒   ▒████▄       ▓██▒▀█▀ ██▒   ▓█   ▀    ▒██▒  ██▒   ▓██░   █▒   ▓█   ▀    ▓██ ▒ ██▒
+▒██░▄▄▄░   ▒██  ▀█▄     ▓██    ▓██░   ▒███      ▒██░  ██▒    ▓██  █▒░   ▒███      ▓██ ░▄█ ▒
+░▓█  ██▓   ░██▄▄▄▄██    ▒██    ▒██    ▒▓█  ▄    ▒██   ██░     ▒██ █░░   ▒▓█  ▄    ▒██▀▀█▄  
+░▒▓███▀▒    ▓█   ▓██▒   ▒██▒   ░██▒   ░▒████▒   ░ ████▓▒░      ▒▀█░     ░▒████▒   ░██▓ ▒██▒
+░▒   ▒     ▒▒   ▓▒█░   ░ ▒░   ░  ░   ░░ ▒░ ░   ░ ▒░▒░▒░       ░ ▐░     ░░ ▒░ ░   ░ ▒▓ ░▒▓░
+ ░   ░      ▒   ▒▒ ░   ░  ░      ░    ░ ░  ░     ░ ▒ ▒░       ░ ░░      ░ ░  ░     ░▒ ░ ▒░
+░ ░   ░      ░   ▒      ░      ░         ░      ░ ░ ░ ▒          ░░        ░        ░░   ░ 
+     ░          ░  ░          ░         ░  ░       ░ ░           ░        ░  ░      ░     
+                                                                ░                         "
+                                                    
+binding.pry
+
 
 forest = Choicea.last.description #edwin
 town = Choiceb.last.description
@@ -41,6 +54,8 @@ ugly = [exclaim, lower_wep]
 offer = [decline, accept]
 unbefriend = [maybe_not, maybe_so]
 
+full_story = []
+
 user_name = prompt.ask("What is your name young adventurer?", required: true)
 User.new do |name| 
     name.name = user_name 
@@ -58,6 +73,7 @@ if prompt.select(beginning_message, route1) == forest
     if prompt.select(Outcome.all[0].outcome, cold_grasp) == run
        if  prompt.select(Outcome.all[1].outcome, bandits) == argue
         puts Outcome.all[2].outcome
+        puts game_over
        else 
         if prompt.select(Outcome.all[3].outcome, offer) == decline
             puts Outcome.all[4].outcome
