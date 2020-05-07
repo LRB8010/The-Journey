@@ -11,5 +11,5 @@ ActiveRecord::Base.establish_connection(
     database: "db/user.db"
 )
 
-ActiveRecord::Base.logger = Logger.new(STDOUT)
+
 
