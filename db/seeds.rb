@@ -2,6 +2,7 @@ Event.destroy_all
 Choicea.destroy_all
 Choiceb.destroy_all
 Outcome.destroy_all
+User.destroy_all
 
 
 
