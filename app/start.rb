@@ -3,7 +3,33 @@ require "tty-prompt"
 prompt = TTY::Prompt.new
 require 'pry'
 ActiveRecord::Base.logger = nil
-beginning_message = "You have been travelling from your hometown on your first adventure. Young, eager and some would presume foolhardy. You have trained for this and are sure to be destined for greatness. Before you the path you follow is a long one. Ahead you see a coming fork. In the fork stands a sign noting the two choices you have. One is shown to be a path leading through the Dark Forest while the other directs you to the nearest town, a prospering city, Milgard"
+require 'colorize'
+require 'tty-box'
+
+def play_music(file)
+    @pid = spawn( 'afplay', file )
+end
+
+def stop_music
+    pid = fork{ system 'killall', 'afplay' }
+end
+
+play_music('music/Dragonborn.mp3')
+beginning_message = "You have been travelling from your hometown on 
+your first adventure. Young, eager and some would presume foolhardy. 
+You have trained for this and are sure to be destined for greatness. 
+Before you the path you follow is a long one. Ahead you see a coming 
+fork. In the fork stands a sign noting the two choices you have. One is 
+shown to be a path leading through the Dark Forest while the other directs 
+you to the nearest town, a prospering city, Milgard"
+
+victory = "████████╗    ██╗  ██╗    ███████╗    ███████╗    ███╗   ██╗    ██████╗ 
+╚══██╔══╝    ██║  ██║    ██╔════╝    ██╔════╝    ████╗  ██║    ██╔══██╗
+   ██║       ███████║    █████╗      █████╗      ██╔██╗ ██║    ██║  ██║
+   ██║       ██╔══██║    ██╔══╝      ██╔══╝      ██║╚██╗██║    ██║  ██║
+   ██║       ██║  ██║    ███████╗    ███████╗    ██║ ╚████║    ██████╔╝
+   ╚═╝       ╚═╝  ╚═╝    ╚══════╝    ╚══════╝    ╚═╝  ╚═══╝    ╚═════╝ "
+
 
 game_over = "  ▄████     ▄▄▄          ███▄ ▄███▓   ▓█████     ▒█████      ██▒   █▓   ▓█████     ██▀███  
  ██▒ ▀█▒   ▒████▄       ▓██▒▀█▀ ██▒   ▓█   ▀    ▒██▒  ██▒   ▓██░   █▒   ▓█   ▀    ▓██ ▒ ██▒
@@ -16,7 +42,7 @@ game_over = "  ▄████     ▄▄▄          ███▄ ▄███�
      ░          ░  ░          ░         ░  ░       ░ ░           ░        ░  ░      ░     
                                                                 ░                         "
                                                     
-binding.pry
+
 
 
 forest = Choicea.last.description #edwin
@@ -73,23 +99,30 @@ if prompt.select(beginning_message, route1) == forest
     if prompt.select(Outcome.all[0].outcome, cold_grasp) == run
        if  prompt.select(Outcome.all[1].outcome, bandits) == argue
         puts Outcome.all[2].outcome
-        puts game_over
+        puts game_over.colorize(:red)
        else 
         if prompt.select(Outcome.all[3].outcome, offer) == decline
             puts Outcome.all[4].outcome
+            
         else
             puts Outcome.all[5].outcome
+            puts "The epic of #{user_name}"
+            puts $victory.colorize(:light_blue)
+            
         end
        end
 # beginning of stand and fight
     else 
         if prompt.select(Outcome.all[6].outcome, ugly) == exclaim
             puts Outcome.all[7].outcome
+            puts game_over.colorize(:red)
         else
             if prompt.select(Outcome.all[8].outcome, unbefriend) == maybe_not
                 puts Outcome.all[9].outcome
             else
                 puts Outcome.all[10].outcome
+                puts "The epic of #{user_name}"
+                puts $victory.colorize(:light_blue)
             end
         end
     end
@@ -101,9 +134,11 @@ else
             if prompt.select(Outcome.all[18].outcome,fight2) == sneak
                 puts Outcome.all[19].outcome
                 puts Outcome.all[21].outcome
+                puts game_over.colorize(:red)
             else
             puts Outcome.all[20].outcome
             puts Outcome.all[21].outcome
+            puts game_over.colorize(:red)
             end
         else
             if prompt.select(Outcome.all[15].outcome,fight1) == tail
@@ -112,9 +147,11 @@ else
                 if prompt.select(Outcome.all[18].outcome,fight2) == sneak
                     puts Outcome.all[19].outcome
                     puts Outcome.all[21].outcome
+                    puts game_over.colorize(:red)
                 else
                 puts Outcome.all[20].outcome
                 puts Outcome.all[21].outcome
+                puts game_over.colorize(:red)
                 end
             
             
@@ -124,9 +161,11 @@ else
                 if prompt.select(Outcome.all[18].outcome,fight2) == sneak
                     puts Outcome.all[19].outcome
                     puts Outcome.all[21].outcome
+                    puts game_over.colorize(:red)
                 else
                 puts Outcome.all[20].outcome
                 puts Outcome.all[21].outcome
+                puts game_over.colorize(:red)
                 end
             end
 
@@ -137,9 +176,11 @@ else
             if prompt.select(Outcome.all[18].outcome,fight2) == sneak
                 puts Outcome.all[19].outcome
                 puts Outcome.all[21].outcome
+                puts game_over.colorize(:red)
             else
             puts Outcome.all[20].outcome
             puts Outcome.all[21].outcome
+            puts game_over.colorize(:red)
             end
         else
             if prompt.select(Outcome.all[15].outcome,fight1) == tail
@@ -147,25 +188,30 @@ else
                 if prompt.select(Outcome.all[18].outcome,fight2) == sneak
                     puts Outcome.all[19].outcome
                     puts Outcome.all[21].outcome
+                    puts game_over.colorize(:red)
                 else
                 puts Outcome.all[20].outcome
                 puts Outcome.all[21].outcome
+                puts game_over.colorize(:red)
                 end
             else
                 puts Outcome.all[17].outcome
                 if prompt.select(Outcome.all[18].outcome,fight2) == sneak
                     puts Outcome.all[19].outcome
                     puts Outcome.all[21].outcome
+                    puts game_over.colorize(:red)
                 else
                 puts Outcome.all[20].outcome
                 puts Outcome.all[21].outcome
+                puts game_over.colorize(:red)
                 end
             end
         end
     end
 end
-
+stop_music
 if prompt.select("Delete your story and try again?", "No", "Yes") == "Yes"
     User.find_by(name: user_name).destroy
     ruby 'yea.rb'
+    
 end

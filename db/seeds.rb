@@ -73,8 +73,7 @@ for the company and your first party member. You turn back towards
 the path that seemed to bring you together. You feel a hopeful light 
 spring to life inside of your chest at the prospect of what is to come. 
 Will your new found companion prove to be an indespensible friend or maybe 
-something a little more? (<3) This is the beginning of your story. 
-The epic of name", event_id: 6)
+something a little more? (<3) This is the beginning of your story.", event_id: 6)
 Outcome.create(outcome: "You turn to fight, weapon at the ready. You 
 are no fool and certainly will not be had by just any meandering 
 mongrel who dares test your mettle. As you steel yourself for what 
@@ -87,7 +86,7 @@ or only do so when you refuse to look at your own face?’ The man
 is clearly offended and as you attempt to find words of apology he 
 strikes you with a small satchel knocking you cold. A deserved blow 
 for not seeing a person for their character and judging solely based on 
-looks. Shame on you. (end)", event_id: 8)
+looks. Shame on you.", event_id: 8)
 Outcome.create(outcome: "You lower your weapon as they have made no 
 move to harm you. You ask them if they are friend or foe. They offer 
 a gentle if not emotionally perplexing smile making their intent clear. 
@@ -111,50 +110,51 @@ kinds of shapes. Some even look like small animals.
 ", event_id: 12)
 Outcome.create(outcome: "Does aren’t statues! Those are people! What 
 kind of thing could do this. You step in to take a closer look. As soon 
-as you touch it, the statues brakes up into ash and flows in the wind. 
-You are startled by something tugging at your pants. It is a man full 
-armor. Battle scared and with very little life. All he has the energy 
+as you touch it, the statues brakes up into ash and flows into the wind. 
+You are startled by something tugging at your pants. It is a man in full 
+armor. Battle scarred and with very little life. All he has the energy 
 to say is, “Your the last hope! Take this sword! Use it to kill the 
 flying beast! Salvation rest on your hands!” He then drops to the 
 ground and dies.You hear a loud roar coming from the skies. Its a 
 dragon!", event_id: 13)
 Outcome.create(outcome: "You are startled by something tugging at your 
-pants. It is a man full armor. Battle scared and with very little life. 
+pants. It is a man in full armor. Battle scarred and with very little life. 
 All he has the energy to say is, “Your the last hope! Take this sword! 
 Use it to kill the flying beast! Salvation rest on your hands!” He then 
-drops to the ground and dies. ADD Beast Slayer to inventory. You hear a 
-loud roar coming from the skies. Its a dragon!", event_id: 14)
+drops to the ground and dies. You hear a loud roar coming from the 
+skies. Its a dragon!", event_id: 14)
 Outcome.create(outcome: "The dragon doesn’t see you and continues 
-rampaging and and destroying the small town. You hear the screams of 
+rampaging and destroying the small town. You hear the screams of 
 the dying people and feel shame that you did not stand and fight. After 
-the dragon is finished it take flight North. You come out of hiding and 
+the dragon is finished it takes flight North. You come out of hiding and 
 follow it.", event_id: 15)
 Outcome.create(outcome: "The dragon lands right in front of you. The 
-dragon breaths fire in your direction and manage to jump out of the way 
+dragon breaths fire in your direction but you manage to jump out of the way 
 in time. ", event_id: 16)
 Outcome.create(outcome: "You attempt to swing at his tail but are 
 unsuccessful. The dragon hits you with all its force and launches you 
 against a burning house. The dragon then takes flight heading North. You 
-get up and follow it.", event_id: 17)
+get up, compose yourself and follow it.", event_id: 17)
 Outcome.create(outcome: "As the dragon tries to take a bite at you, you 
-manage to dodge the bit and jump up its head. You run down its neck and 
+manage to dodge his mouth and jump up its head. You run down its neck and 
 slash its wing! The dragon lets out a powerful roar, so powerful that it 
 felt like your head was going to explode. You jump off. As soon as you do 
-it takes flight heading north. You stand up dust your self up and follow 
+it takes flight heading north. You stand up, dust your self up and follow 
 it.", event_id: 18)
 Outcome.create(outcome: "You followed the dragon for what seemed ages. 
 The dragon was much faster than you but could still see the general 
-direction he was going. He stops at the top of a mountain and enters a 
-big cave entrance. It takes you some time to climb the mountain but 
-finally make it before the sun goes down. Inside you see the dragon is 
+direction it was going. It stops at the top of a mountain and enters a 
+big cavern. The mounatin climb was rough and long but you
+finally make it before the sun goes down. Inside, you see the dragon is 
 sleeping.", event_id: 19)
 Outcome.create(outcome: "You try to sneak in but as soon as you enter the 
-cave the dragon opens his eyes. It party time!", event_id: 20)
-Outcome.create(outcome: "You run in and as soon as you enter the cave the 
-dragon opens his eyes. It party time!", event_id: 21)
+cave the dragon opens his eyes. It's party time!", event_id: 20)
+Outcome.create(outcome: "You run in screaming with all your might! As soon 
+as you enter the cave the dragon opens his eyes. 
+It's party time!", event_id: 21)
 Outcome.create(outcome: "You fight for hours taking blows and delivering 
-them as well. But in the end only one survives! The dragon takes you by 
-the head and eats you up….. What did you expect?! You have no armor, no 
+them as well. But in the end, only one survives! The dragon takes you by 
+the head and eats you up…... What did you expect?! You have no armor, no 
 combat experience and no team of ride or die companions! You should have 
-gone the other route!", event_id: 22)
+taken the other route!", event_id: 22)
 
