@@ -16,7 +16,7 @@ game_over = "  ▄████     ▄▄▄          ███▄ ▄███�
      ░          ░  ░          ░         ░  ░       ░ ░           ░        ░  ░      ░     
                                                                 ░                         "
                                                     
-binding.pry
+# binding.pry
 
 
 forest = Choicea.last.description #edwin
